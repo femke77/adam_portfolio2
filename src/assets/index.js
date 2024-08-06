@@ -1,3 +1,3 @@
 export {
-    default as forcepic
-} from "./projects/IMG_2076.jpeg"
+    default as avatar
+} from "./projects/IMG_0698.jpeg"
