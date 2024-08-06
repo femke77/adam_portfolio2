@@ -12,3 +12,4 @@
 - Previous activities incl Mini Project for this module
 - https://react.dev/reference/react/useState
 - https://www.dhiwise.com/post/react-avatar-from-installation-to-advanced-customization
+- https://react.dev/reference/react/useEffect
