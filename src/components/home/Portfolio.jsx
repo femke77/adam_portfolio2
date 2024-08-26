@@ -1,5 +1,5 @@
-import Project from "../components/Project";
-import projectData from '../utils/projectdata.json'
+import Project from "../Project";
+import projectData from '../../utils/projectdata.json'
 function Portfolio() {
   
   return (

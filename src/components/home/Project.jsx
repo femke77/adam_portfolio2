@@ -1,4 +1,4 @@
-import * as projects from "../assets";
+import * as projects from "../../assets";
 export default function Project({ project }) {
   const { name, repo, link, description, image } = project;
   return (
