@@ -1,4 +1,4 @@
-import Project from "../Project";
+import Project from './Project';
 import projectData from '../../utils/projectdata.json'
 function Portfolio() {
   
