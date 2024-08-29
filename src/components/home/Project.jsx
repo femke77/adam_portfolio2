@@ -1,21 +1,33 @@
 import * as projects from "../../assets";
-export default function Project({ project }) {
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+
+
+export default function Project({project}) {
   const { name, repo, link, description, image } = project;
   return (
-    <><div className="p-3">
-    <img
-      src={projects[image]}
-      alt={name}
-      className="p-img"
-    />
-    <div className="">
-      <h1>
-        <a href={link}>{name}</a>{' '}
-        <a href={repo}>
-          <i className="fab fa-github"></i>
-        </a>
-      </h1>
-      <p>{description}</p>
-    </div>
-  </div></>
-  )}
+    <Card sx={{ maxWidth: 345 }}>
+      <CardMedia
+        sx={{ height: 140 }}
+        image={projects[image]}
+        title={name}
+      />
+      <CardContent>
+        <Typography gutterBottom sx={{textAlign:"center"}}variant="h5" component="div">
+          {name}
+        </Typography>
+        <Typography variant="body2" sx={{ color: 'text.secondary', textAlign:"center" }}>
+          {description}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <a href={link} target='_blank' rel="noreferrer"><Button size="small">Demo</Button></a>
+        <a href={repo} target="_blank" rel="noreferrer"><Button size="small">GitHub</Button></a>       
+      </CardActions>
+    </Card>
+  );
+}
