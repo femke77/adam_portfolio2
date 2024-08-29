@@ -2,7 +2,7 @@ export default function Intro() {
   return (
     <div>
       <p>
-        This is a placeholder.INTRO
+        Hey! I&apos;m Adam Mathis, Full Stack Developer. Thanks for checking out my work!  
       </p>
     </div>
   );
