@@ -234,14 +234,25 @@ export default function Nav() {
                     <li>
                       {" "}
                       <Button sx={{color:"black"}}>
+                      <RouterLink
+                          to="/Contact"
+                          style={{ textDecoration: "none", color: "black" }}
+                        >
+                          Contact
+                        </RouterLink>
+                        
+                      </Button>
+                    </li>
+                    <li>
+                      <Button sx={{color:"black"}}>
                         <ScrollLink
-                          to="home"
+                          to="projects"
                           spy={true}
                           smooth={true}
                           offset={-75}
                           duration={500}
                         >
-                          Home
+                          Projects
                         </ScrollLink>
                       </Button>
                     </li>
@@ -260,25 +271,15 @@ export default function Nav() {
                     </li>
                     <li>
                       <Button sx={{color:"black"}}>
-                        <ScrollLink
-                          to="projects"
+                      <ScrollLink
+                          to="home"
                           spy={true}
                           smooth={true}
                           offset={-75}
                           duration={500}
                         >
-                          Projects
+                          Home
                         </ScrollLink>
-                      </Button>
-                    </li>
-                    <li>
-                      <Button sx={{color:"black"}}>
-                        <RouterLink
-                          to="/Contact"
-                          style={{ textDecoration: "none", color: "black" }}
-                        >
-                          Contact
-                        </RouterLink>
                       </Button>
                     </li>
                   </>
