@@ -53,7 +53,7 @@ export default function Contact() {
         width: '100%'
       }}
     >
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="sm">
         <CssBaseline />
         <Box
           sx={{
@@ -69,7 +69,7 @@ export default function Contact() {
         >
           <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}></Avatar>
           <Typography component="h1" variant="h5">
-            Contact Us
+            I&apos;d love to hear from you!
           </Typography>
           <Box
             component="form"
