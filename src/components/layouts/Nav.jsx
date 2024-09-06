@@ -8,6 +8,8 @@ import { useState } from "react"
 import { Link as ScrollLink } from "react-scroll"
 import Fab from "@mui/material/Fab"
 import UpIcon from '@mui/icons-material/KeyboardArrowUp';
+import { useMediaQuery } from '@mui/material';
+
 
 export default function Nav() {
     const path = useLocation().pathname;
@@ -26,7 +28,7 @@ export default function Nav() {
     };
 
     const [openDrawer, setOpenDrawer] = useState(false);
-    const isMobile = false;
+    const isMobile = useMediaQuery('(max-width:700px)');
 
     // Function to scroll to the top
   const handleScrollToTop = () => {
