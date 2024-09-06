@@ -8,6 +8,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import tuktuk from "../assets/images/tuktuk.jpg"
+import Layout from "../components/layouts/Layout";
 
 export default function Contact() {
   const [formState, setFormState] = useState({
@@ -41,6 +42,7 @@ export default function Contact() {
   };
 
   return (
+    <Layout>
     <div style ={{
         position: 'fixed',
         backgroundImage: `url(${tuktuk})`,
@@ -53,7 +55,7 @@ export default function Contact() {
         width: '100%'
       }}
     >
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="sm">
         <CssBaseline />
         <Box
           sx={{
@@ -69,7 +71,7 @@ export default function Contact() {
         >
           <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}></Avatar>
           <Typography component="h1" variant="h5">
-            Contact Us
+            I&apos;d love to hear from you!
           </Typography>
           <Box
             component="form"
@@ -146,5 +148,6 @@ export default function Contact() {
         </Box>
       </Container>
     </div>
+    </Layout>
   );
 }

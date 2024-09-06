@@ -1,7 +1,7 @@
 import Avatar from 'react-avatar';
 export default function About() {
   return (
-    <div>
+    <div id = "about">
       <Avatar 
       src="./src/assets/projects/IMG_0698.jpg"
       alt="profile pic"
