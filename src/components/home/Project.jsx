@@ -5,11 +5,13 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Paper from '@mui/material/Paper'
 
 
 export default function Project({project}) {
   const { name, repo, link, description, image } = project;
   return (
+    <Paper elevation={10} sx={{ maxWidth: 345, margin: '16px auto' }}>
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         sx={{ height: 140 }}
@@ -29,5 +31,6 @@ export default function Project({project}) {
         <a href={repo} target="_blank" rel="noreferrer"><Button size="small">GitHub</Button></a>       
       </CardActions>
     </Card>
+    </Paper>
   );
 }
