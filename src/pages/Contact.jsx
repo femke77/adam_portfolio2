@@ -8,6 +8,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import tuktuk from "../assets/images/tuktuk.jpg"
+import Layout from "../components/layouts/Layout";
 
 export default function Contact() {
   const [formState, setFormState] = useState({
@@ -41,6 +42,7 @@ export default function Contact() {
   };
 
   return (
+    <Layout>
     <div style ={{
         position: 'fixed',
         backgroundImage: `url(${tuktuk})`,
@@ -146,5 +148,6 @@ export default function Contact() {
         </Box>
       </Container>
     </div>
+    </Layout>
   );
 }

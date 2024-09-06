@@ -1,7 +1,6 @@
 // Bringing in the required import from 'react-router-dom'
 import { Outlet } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
-import Footer from './components/Footer';
 import { CssBaseline } from '@mui/material';
 import "./App.css"
 
@@ -13,7 +12,6 @@ function App() {
       <main className="">
         <Outlet />
       </main>
-      <Footer />
     </>
   );
 }

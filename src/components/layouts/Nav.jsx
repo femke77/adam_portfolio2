@@ -302,17 +302,14 @@ export default function Nav() {
                       {" "}
                       <Button
                         sx={{color:"black"}}
-                        onClick={() => goToPageAndScroll("home")}
+                        
                       >
-                        Home
-                      </Button>
-                    </li>
-                    <li>
-                      <Button
-                        sx={{color:"black"}}
-                        onClick={() => goToPageAndScroll("about")}
-                      >
-                        About
+                        <RouterLink
+                          to="/Contact"
+                          style={{ textDecoration: "none", color: "black" }}
+                        >
+                          Contact
+                        </RouterLink>
                       </Button>
                     </li>
                     <li>
@@ -324,13 +321,18 @@ export default function Nav() {
                       </Button>
                     </li>
                     <li>
-                      <Button sx={{color:"black"}}>
-                        <RouterLink
-                          to="/Contact"
-                          style={{ textDecoration: "none", color: "black" }}
-                        >
-                          Contact
-                        </RouterLink>
+                      <Button
+                        sx={{color:"black"}}
+                        onClick={() => goToPageAndScroll("about")}
+                      >
+                        About
+                      </Button>
+                    </li>
+                    <li>
+                      <Button sx={{color:"black"}}
+                      onClick={() => goToPageAndScroll("home")}
+                      >
+                        Home
                       </Button>
                     </li>
                   </>
