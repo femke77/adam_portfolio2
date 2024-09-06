@@ -6,12 +6,15 @@ import { NavLink as RouterLink, useLocation, useNavigate } from "react-router-do
 import * as Scroll from "react-scroll"
 import { useState } from "react"
 import { Link as ScrollLink } from "react-scroll"
+import Fab from "@mui/material/Fab"
+import UpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 export default function Nav() {
     const path = useLocation().pathname;
     const location = path.split("/")[1];
     const navigate = useNavigate();
     const scroller = Scroll.scroller;
+    
     const goToPageAndScroll = async (selector) => {
       await navigate("/");
       await scroller.scrollTo(selector, {
@@ -21,8 +24,18 @@ export default function Nav() {
         spy: true,
       });
     };
+
     const [openDrawer, setOpenDrawer] = useState(false);
     const isMobile = false;
+
+    // Function to scroll to the top
+  const handleScrollToTop = () => {
+    scroll.scrollToTop({
+      duration: 500,
+      smooth: true,
+    });
+  };
+
     return (
         <> {isMobile ? (
             <>
@@ -325,6 +338,19 @@ export default function Nav() {
               </ul>
             </nav>
           )}
+          {/* Add FAB Button */}
+      <Fab
+        color="primary"
+        aria-label="scroll to top"
+        onClick={handleScrollToTop}
+        sx={{
+          position: "fixed",
+          bottom: 16,
+          left: 16,
+        }}
+      >
+        <UpIcon />
+      </Fab>
         </>
     )
 }
