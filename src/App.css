@@ -1,20 +1,11 @@
-
-.container-body {
-  height: 9000px;
-}
-.bg-container {
-  position: relative;
-  width: 100% !important;
-  height: 600px;
-  margin: auto;
-  margin-top: 60%;
+li {
+  list-style: none;
 }
 
-.bg-container h1 {
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 150px;
-  font-size: 90px;
+img {
+  border-style: none;
+}
+
+main{
+  margin-top: 50px;
 }
