@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <CssBaseline />
-      <main className="">
+      <main>
         <Outlet />
       </main>
     </>

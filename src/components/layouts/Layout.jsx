@@ -9,21 +9,25 @@ export default function Layout({children}) {
         socials: {
           display: 'flex',
           flexDirection: 'column',
-          position: 'fixed',
-          right: '50px',
-          top: '25vh',
+            position: 'fixed',
+            right: '35px',
+
+
+            
+            top: '25vh',
+         
         }
       }
     return (
-        <Grid container={true}  spacing={2}>
-            <Grid item={true} sx={{marginLeft:"20px"}} lg={1}>
+        <Grid container={true}  spacing={3}>
+            <Grid item={true} sx={{flexDirection: "column", alignItems:"center"}} xs={3} sm={1.5} md={1.5}  lg={1.5}>
                 <Nav />
             </Grid>
-            <Grid item={true} alignItems="center"  lg={10}>
+            <Grid item={true} sx={{flexDirection: "column", alignItems: "center", padding: "20px"}} xs={8} sm={9} md={9} lg={9}>
                 {children}
             </Grid>
-            <Grid item={true} lg={1}>
-                {!isMobile && (<Socials styles={styles.socials} placement={'right'} color={'primary'} background={'transparent'} />)}
+            <Grid  item={true} sx={{flexDirection: "column", alignItems: "center", }} xs={1} sm={1.5} md={1.5} lg={1.5}>
+                {!isMobile ? (<Socials styles={styles.socials}  placement={'right' } color={'secondary'} background={'transparent'} />) : ("")}
             
             </Grid>
         </Grid>

@@ -27,7 +27,7 @@ const socialIcons = [
 
   export default function Socials({styles, placement, color, background}) {
     return (
-      <Box style={styles}>
+      <Box style={styles} sx={{marginLeft:"25px"}}>
         {socialIcons.map(({ icon, label, href }, index) => (
           <StyledTooltip 
             key={index} 
@@ -39,6 +39,7 @@ const socialIcons = [
             color={color} 
             aria-label={label} 
             href={href}
+            target='_blank' rel="noreferrer"
             sx={{
               marginTop: '15px',
               background: {background}, 
