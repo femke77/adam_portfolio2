@@ -3,18 +3,18 @@
     position: fixed;
     top: 0;
     animation: 2s slide-right ease-out forwards;
+   
 }
 
 @keyframes slide-right {
     from {
         transform: translateX(-100vw);
-        /* Start from off-screen to the left */
-    }
+     }
 
     to {
         transform: translateX(0);
-        /* End at its original position */
-    }
+   
+     }
 }
 
 
@@ -27,11 +27,9 @@
 @keyframes slide-left {
     from {
         transform: translateX(100vw);
-        /* Start position (off the screen to the right) */
     }
 
     to {
         transform: translateX(0);
-        /* End position (its normal position on the screen) */
     }
 }

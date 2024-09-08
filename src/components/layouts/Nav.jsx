@@ -101,7 +101,7 @@ export default function Nav() {
                   <Divider variant="center" color="#ffffff" />
                   <li>
                     {" "}
-                    <Button sx={{ color: "black" }}>
+                    <Button sx={{ color: "white" }}>
                       <ScrollLink
                         to="home"
                         spy={true}
@@ -115,7 +115,7 @@ export default function Nav() {
                     </Button>
                   </li>
                   <li>
-                    <Button sx={{ color: "black" }}>
+                    <Button sx={{ color: "white" }}>
                       <ScrollLink
                         to="about"
                         spy={true}
@@ -129,7 +129,7 @@ export default function Nav() {
                     </Button>
                   </li>
                   <li>
-                    <Button sx={{ color: "black" }}>
+                    <Button sx={{ color: "white" }}>
                       <ScrollLink
                         to="projects"
                         spy={true}
@@ -143,11 +143,11 @@ export default function Nav() {
                     </Button>
                   </li>
                   <li>
-                    <Button sx={{ color: "black" }}>
+                    <Button sx={{ color: "white" }}>
                       <RouterLink
                         to="/Contact"
                         onClick={() => setOpenDrawer(false)}
-                        style={{ textDecoration: "none", color: "black" }}
+                        style={{ textDecoration: "none", color: "white" }}
                       >
                         Contact
                       </RouterLink>
@@ -205,7 +205,7 @@ export default function Nav() {
                   <li>
                     {" "}
                     <Button
-                      sx={{ color: "black" }}
+                      sx={{ color: "white" }}
                       onClick={() => goToPageAndScroll("home")}
                     >
                       Home
@@ -213,7 +213,7 @@ export default function Nav() {
                   </li>
                   <li>
                     <Button
-                      sx={{ color: "black" }}
+                      sx={{ color: "white" }}
                       onClick={() => goToPageAndScroll("about")}
                     >
                       About
@@ -221,17 +221,17 @@ export default function Nav() {
                   </li>
                   <li>
                     <Button
-                      sx={{ color: "black" }}
+                      sx={{ color: "white" }}
                       onClick={() => goToPageAndScroll("projects")}
                     >
                       Projects
                     </Button>
                   </li>
                   <li>
-                    <Button sx={{ color: "black" }}>
+                    <Button sx={{ color: "white" }}>
                       <RouterLink
                         to="/Contact"
-                        style={{ textDecoration: "none", color: "black" }}
+                        style={{ textDecoration: "none", color: "white" }}
                       >
                         Contact
                       </RouterLink>
@@ -277,17 +277,17 @@ export default function Nav() {
               <>
                 <li>
                   {" "}
-                  <Button sx={{ color: "black" }}>
+                  <Button sx={{ color: "white" }}>
                     <RouterLink
                       to="/Contact"
-                      style={{ textDecoration: "none", color: "black" }}
+                      style={{ textDecoration: "none", color: "white" }}
                     >
                       Contact
                     </RouterLink>
                   </Button>
                 </li>
                 <li>
-                  <Button sx={{ color: "black" }}>
+                  <Button sx={{ color: "white" }}>
                     <ScrollLink
                       to="projects"
                       spy={true}
@@ -300,7 +300,7 @@ export default function Nav() {
                   </Button>
                 </li>
                 <li>
-                  <Button sx={{ color: "black" }}>
+                  <Button sx={{ color: "white" }}>
                     <ScrollLink
                       to="about"
                       spy={true}
@@ -313,7 +313,7 @@ export default function Nav() {
                   </Button>
                 </li>
                 <li>
-                  <Button sx={{ color: "black" }}>
+                  <Button sx={{ color: "white" }}>
                     <ScrollLink
                       to="home"
                       spy={true}
@@ -331,10 +331,10 @@ export default function Nav() {
               
                 <li>
                   {" "}
-                  <Button sx={{ color: "black" }}>
+                  <Button sx={{ color: "white" }}>
                     <RouterLink
                       to="/Contact"
-                      style={{ textDecoration: "none", color: "black" }}
+                      style={{ textDecoration: "none", color: "white" }}
                     >
                       Contact
                     </RouterLink>
@@ -342,7 +342,7 @@ export default function Nav() {
                 </li>
                 <li>
                   <Button
-                    sx={{ color: "black" }}
+                    sx={{ color: "white" }}
                     onClick={() => goToPageAndScroll("projects")}
                   >
                     Projects
@@ -350,7 +350,7 @@ export default function Nav() {
                 </li>
                 <li>
                   <Button
-                    sx={{ color: "black" }}
+                    sx={{ color: "white" }}
                     onClick={() => goToPageAndScroll("about")}
                   >
                     About
@@ -358,7 +358,7 @@ export default function Nav() {
                 </li>
                 <li>
                   <Button
-                    sx={{ color: "black" }}
+                    sx={{ color: "white" }}
                     onClick={() => goToPageAndScroll("home")}
                   >
                     Home
