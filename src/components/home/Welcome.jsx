@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import "./Welcome.css";
 import * as Scroll from "react-scroll";
-
 export default function Welcome() {
   const scroller = Scroll.scroller;
 
