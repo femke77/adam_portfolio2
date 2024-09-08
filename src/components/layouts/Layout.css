@@ -2,33 +2,27 @@
     height: 100%;
     position: fixed;
     top: 0;
-    animation: 2s slide-right ease-out forwards;
+    animation: 4s slide-right ease-out forwards;
    
 }
 
 @keyframes slide-right {
     from {
-        transform: translateX(-100vw);
+        transform: translateX(-150vw);
      }
-
     to {
         transform: translateX(0);
-   
      }
 }
 
-
-
 .slide-left {
-
-    animation: 2s slide-left ease-out forwards;
+    animation: 4s slide-left ease-out forwards;
 }
 
 @keyframes slide-left {
     from {
-        transform: translateX(100vw);
+        transform: translateX(150vw);
     }
-
     to {
         transform: translateX(0);
     }

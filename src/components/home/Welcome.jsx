@@ -1,10 +1,11 @@
 import { useEffect } from "react";
 import "./Welcome.css";
 import * as Scroll from "react-scroll";
+
 export default function Welcome() {
   const scroller = Scroll.scroller;
 
-  const goToPageAndScroll = (selector) => {
+  const scroll = (selector) => {
     scroller.scrollTo(selector, {
       duration: 1500,
       offset: -75,
@@ -14,7 +15,8 @@ export default function Welcome() {
 
   useEffect(() => {
     setTimeout(() => {
-      goToPageAndScroll("intro");
+      // Scroll into the intro section automatically after 4 seconds???
+        // scroll("intro");
     }, 4000);
   }, []);
 

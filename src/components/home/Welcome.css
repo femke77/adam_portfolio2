@@ -34,7 +34,7 @@
 }
 
 .animated-title>div {
-  height: 33vmin;
+  height: 35vmin; /* combination of this plus span height*/
   overflow: hidden;
 
   width: 100%;
@@ -48,7 +48,7 @@
 
 .animated-title>div div span {
   display: block;
-  height: 14vmin;
+  height: 15vmin;  /* combination of this plust height above change  */
   
 
 }

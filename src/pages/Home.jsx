@@ -4,7 +4,7 @@ import Intro from "../components/home/Intro"
 import Portfolio from "../components/home/Portfolio"
 import Skills from "../components/home/Skills"
 import Footer from '../components/Footer';
-import Welcome from "../components/home/Welcome"
+import Welcome from "../components/home/Welcome2"
 
 
 export default function Home() {
