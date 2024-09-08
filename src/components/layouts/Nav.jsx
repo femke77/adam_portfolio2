@@ -15,6 +15,8 @@ import { useMediaQuery } from "@mui/material";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Avatar from "react-avatar";
 import Socials from "./Socials";
+
+
 const styles = {
   up: {
     position: "fixed",
@@ -41,9 +43,9 @@ export default function Nav() {
   const navigate = useNavigate();
   const scroller = Scroll.scroller;
 
-  const goToPageAndScroll = async (selector) => {
-    await navigate("/");
-    await scroller.scrollTo(selector, {
+  const goToPageAndScroll = (selector) => {
+    navigate("/");
+    scroller.scrollTo(selector, {
       duration: 500,
       smooth: true,
       offset: -75,
@@ -99,7 +101,7 @@ export default function Nav() {
                   <Divider variant="center" color="#ffffff" />
                   <li>
                     {" "}
-                    <Button sx={{ color: "black" }}>
+                    <Button sx={{ color: "white" }}>
                       <ScrollLink
                         to="home"
                         spy={true}
@@ -113,7 +115,7 @@ export default function Nav() {
                     </Button>
                   </li>
                   <li>
-                    <Button sx={{ color: "black" }}>
+                    <Button sx={{ color: "white" }}>
                       <ScrollLink
                         to="about"
                         spy={true}
@@ -127,7 +129,7 @@ export default function Nav() {
                     </Button>
                   </li>
                   <li>
-                    <Button sx={{ color: "black" }}>
+                    <Button sx={{ color: "white" }}>
                       <ScrollLink
                         to="projects"
                         spy={true}
@@ -141,11 +143,11 @@ export default function Nav() {
                     </Button>
                   </li>
                   <li>
-                    <Button sx={{ color: "black" }}>
+                    <Button sx={{ color: "white" }}>
                       <RouterLink
                         to="/Contact"
                         onClick={() => setOpenDrawer(false)}
-                        style={{ textDecoration: "none", color: "black" }}
+                        style={{ textDecoration: "none", color: "white" }}
                       >
                         Contact
                       </RouterLink>
@@ -203,7 +205,7 @@ export default function Nav() {
                   <li>
                     {" "}
                     <Button
-                      sx={{ color: "black" }}
+                      sx={{ color: "white" }}
                       onClick={() => goToPageAndScroll("home")}
                     >
                       Home
@@ -211,7 +213,7 @@ export default function Nav() {
                   </li>
                   <li>
                     <Button
-                      sx={{ color: "black" }}
+                      sx={{ color: "white" }}
                       onClick={() => goToPageAndScroll("about")}
                     >
                       About
@@ -219,17 +221,17 @@ export default function Nav() {
                   </li>
                   <li>
                     <Button
-                      sx={{ color: "black" }}
+                      sx={{ color: "white" }}
                       onClick={() => goToPageAndScroll("projects")}
                     >
                       Projects
                     </Button>
                   </li>
                   <li>
-                    <Button sx={{ color: "black" }}>
+                    <Button sx={{ color: "white" }}>
                       <RouterLink
                         to="/Contact"
-                        style={{ textDecoration: "none", color: "black" }}
+                        style={{ textDecoration: "none", color: "white" }}
                       >
                         Contact
                       </RouterLink>
@@ -248,8 +250,10 @@ export default function Nav() {
           )}
         </>
       ) : (
-        // Desktop Nav
-        <nav id="navigation">
+
+        // Desktop Nav //
+
+        <nav id="navigation" className="slide-right">
           <Avatar
             src="../../assets/projects/IMG_0698.jpg"
             alt="profile pic"
@@ -265,25 +269,25 @@ export default function Nav() {
               transformOrigin: "left",
               position: "fixed",
               top: "30rem",
-              marginLeft: "20px",
-              paddingTop: "50px", //This moves the left side nav bar to the right, i.e. paddingLeft
+              left: "20px",
+              paddingTop: "35px", //This moves the left side nav bar to the right, i.e. paddingLeft
             }}
           >
             {location !== "Contact" ? (
               <>
                 <li>
                   {" "}
-                  <Button sx={{ color: "black" }}>
+                  <Button sx={{ color: "white" }}>
                     <RouterLink
                       to="/Contact"
-                      style={{ textDecoration: "none", color: "black" }}
+                      style={{ textDecoration: "none", color: "white" }}
                     >
                       Contact
                     </RouterLink>
                   </Button>
                 </li>
                 <li>
-                  <Button sx={{ color: "black" }}>
+                  <Button sx={{ color: "white" }}>
                     <ScrollLink
                       to="projects"
                       spy={true}
@@ -296,7 +300,7 @@ export default function Nav() {
                   </Button>
                 </li>
                 <li>
-                  <Button sx={{ color: "black" }}>
+                  <Button sx={{ color: "white" }}>
                     <ScrollLink
                       to="about"
                       spy={true}
@@ -309,7 +313,7 @@ export default function Nav() {
                   </Button>
                 </li>
                 <li>
-                  <Button sx={{ color: "black" }}>
+                  <Button sx={{ color: "white" }}>
                     <ScrollLink
                       to="home"
                       spy={true}
@@ -324,12 +328,13 @@ export default function Nav() {
               </>
             ) : (
               <>
+              
                 <li>
                   {" "}
-                  <Button sx={{ color: "black" }}>
+                  <Button sx={{ color: "white" }}>
                     <RouterLink
                       to="/Contact"
-                      style={{ textDecoration: "none", color: "black" }}
+                      style={{ textDecoration: "none", color: "white" }}
                     >
                       Contact
                     </RouterLink>
@@ -337,7 +342,7 @@ export default function Nav() {
                 </li>
                 <li>
                   <Button
-                    sx={{ color: "black" }}
+                    sx={{ color: "white" }}
                     onClick={() => goToPageAndScroll("projects")}
                   >
                     Projects
@@ -345,7 +350,7 @@ export default function Nav() {
                 </li>
                 <li>
                   <Button
-                    sx={{ color: "black" }}
+                    sx={{ color: "white" }}
                     onClick={() => goToPageAndScroll("about")}
                   >
                     About
@@ -353,7 +358,7 @@ export default function Nav() {
                 </li>
                 <li>
                   <Button
-                    sx={{ color: "black" }}
+                    sx={{ color: "white" }}
                     onClick={() => goToPageAndScroll("home")}
                   >
                     Home
