@@ -16,7 +16,6 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Avatar from "react-avatar";
 import Socials from "./Socials";
 
-
 const styles = {
   up: {
     position: "fixed",
@@ -155,10 +154,10 @@ export default function Nav() {
                   </li>
                   <li>
                     <Socials
-                          styles={styles.rightSocials}
-                          placement={"right"}
-                          color={"secondary"}
-                        />
+                      styles={styles.rightSocials}
+                      placement={"right"}
+                      color={"secondary"}
+                    />
                   </li>
                 </ul>
               </Drawer>
@@ -239,10 +238,10 @@ export default function Nav() {
                   </li>
                   <li>
                     <Socials
-                          styles={styles.rightSocials}
-                          placement={"right"}
-                          color={"secondary"}
-                        />
+                      styles={styles.rightSocials}
+                      placement={"right"}
+                      color={"secondary"}
+                    />
                   </li>
                 </ul>
               </Drawer>
@@ -250,9 +249,8 @@ export default function Nav() {
           )}
         </>
       ) : (
-
         // Desktop Nav //
-
+// TODO no animation on contact page? alter the code below so that slide-right is only on !== Contact
         <nav id="navigation" className="slide-right">
           <Avatar
             src="../../assets/projects/IMG_0698.jpg"
@@ -328,7 +326,6 @@ export default function Nav() {
               </>
             ) : (
               <>
-              
                 <li>
                   {" "}
                   <Button sx={{ color: "white" }}>
@@ -367,19 +364,13 @@ export default function Nav() {
               </>
             )}
           </ul>
-          <ScrollLink
-            to="intro"
-            spy={true}
-            offset={-75}
-            duration={500}
-          >
+          <ScrollLink to="intro" spy={true} offset={-75} duration={500}>
             <Fab color="secondary" aria-label="up" style={styles.up}>
               <KeyboardArrowUpIcon />
             </Fab>
           </ScrollLink>
         </nav>
       )}
-     
     </>
   );
 }
