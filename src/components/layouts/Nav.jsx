@@ -16,6 +16,7 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Avatar from "react-avatar";
 import Socials from "./Socials";
 
+// TODO refactor this page to reduce repeated code
 
 const styles = {
   up: {
@@ -43,11 +44,12 @@ export default function Nav() {
   const navigate = useNavigate();
   const scroller = Scroll.scroller;
 
-  const goToPageAndScroll = (selector) => {
-    navigate("/");
-    scroller.scrollTo(selector, {
-      duration: 500,
-      smooth: true,
+  const goToPageAndScroll = async (selector) => {
+    
+    await navigate("/");
+    await scroller.scrollTo(selector, {
+      duration: 5,
+    
       offset: -75,
       spy: true,
     });
@@ -62,7 +64,7 @@ export default function Nav() {
         <>
           {location !== "Contact" ? (
             <div>
-              <Button onClick={() => setOpenDrawer(true)}>
+              <Button sx={{paddingTop: "25px"}} onClick={() => setOpenDrawer(true)}>
                 <MenuIcon
                   size="large"
                   edge="start"
@@ -155,17 +157,17 @@ export default function Nav() {
                   </li>
                   <li>
                     <Socials
-                          styles={styles.rightSocials}
-                          placement={"right"}
-                          color={"secondary"}
-                        />
+                      styles={styles.rightSocials}
+                      placement={"right"}
+                      color={"secondary"}
+                    />
                   </li>
                 </ul>
               </Drawer>
             </div>
           ) : (
             <div>
-              <Button onClick={() => setOpenDrawer(true)}>
+              <Button sx={{paddingTop: "25px"}} onClick={() => setOpenDrawer(true)}>
                 <MenuIcon
                   size="large"
                   edge="start"
@@ -206,7 +208,7 @@ export default function Nav() {
                     {" "}
                     <Button
                       sx={{ color: "white" }}
-                      onClick={() => goToPageAndScroll("home")}
+                      onClick={() => goToPageAndScroll("intro") && setOpenDrawer(false)}
                     >
                       Home
                     </Button>
@@ -214,7 +216,7 @@ export default function Nav() {
                   <li>
                     <Button
                       sx={{ color: "white" }}
-                      onClick={() => goToPageAndScroll("about")}
+                      onClick={() => goToPageAndScroll("about") && setOpenDrawer(false)}
                     >
                       About
                     </Button>
@@ -222,7 +224,7 @@ export default function Nav() {
                   <li>
                     <Button
                       sx={{ color: "white" }}
-                      onClick={() => goToPageAndScroll("projects")}
+                      onClick={() => goToPageAndScroll("projects") && setOpenDrawer(false)} 
                     >
                       Projects
                     </Button>
@@ -239,10 +241,10 @@ export default function Nav() {
                   </li>
                   <li>
                     <Socials
-                          styles={styles.rightSocials}
-                          placement={"right"}
-                          color={"secondary"}
-                        />
+                      styles={styles.rightSocials}
+                      placement={"right"}
+                      color={"secondary"}
+                    />
                   </li>
                 </ul>
               </Drawer>
@@ -250,9 +252,8 @@ export default function Nav() {
           )}
         </>
       ) : (
-
+        
         // Desktop Nav //
-
         <nav id="navigation" className="slide-right">
           <Avatar
             src="../../assets/projects/IMG_0698.jpg"
@@ -291,8 +292,8 @@ export default function Nav() {
                     <ScrollLink
                       to="projects"
                       spy={true}
-                      smooth={true}
-                      offset={-75}
+       
+                    
                       duration={500}
                     >
                       Projects
@@ -304,7 +305,7 @@ export default function Nav() {
                     <ScrollLink
                       to="about"
                       spy={true}
-                      smooth={true}
+         
                       offset={-75}
                       duration={500}
                     >
@@ -315,9 +316,9 @@ export default function Nav() {
                 <li>
                   <Button sx={{ color: "white" }}>
                     <ScrollLink
-                      to="home"
+                      to="intro"
                       spy={true}
-                      smooth={true}
+          
                       offset={-75}
                       duration={500}
                     >
@@ -328,7 +329,6 @@ export default function Nav() {
               </>
             ) : (
               <>
-              
                 <li>
                   {" "}
                   <Button sx={{ color: "white" }}>
@@ -367,19 +367,13 @@ export default function Nav() {
               </>
             )}
           </ul>
-          <ScrollLink
-            to="intro"
-            spy={true}
-            offset={-75}
-            duration={500}
-          >
+          <ScrollLink to="intro" spy={true} offset={-75} duration={500}>
             <Fab color="secondary" aria-label="up" style={styles.up}>
               <KeyboardArrowUpIcon />
             </Fab>
           </ScrollLink>
         </nav>
       )}
-     
     </>
   );
 }

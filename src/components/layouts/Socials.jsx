@@ -7,6 +7,7 @@ import { styled } from '@mui/material/styles';
 import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 import Fab from "@mui/material/Fab"
 
+
 const socialIcons = [
     { icon: <GitHubIcon />, label: 'GitHub', href: 'https://github.com/adammathis05' },
     { icon: <LinkedInIcon />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/adammathis05/' },
@@ -25,9 +26,10 @@ const socialIcons = [
     },
   }));
 
-  export default function Socials({styles, placement, color, background}) {
+  export default function Socials({styles, placement, color, background, isMobile}) {
+   
     return (
-      <Box className="slide-left" style={styles} sx={{ marginLeft: "25px"}}>
+      <Box className={isMobile === undefined ? "" : "slide-left"} style={styles} sx={{ marginLeft: "25px"}}>
         {socialIcons.map(({ icon, label, href }, index) => (
           <StyledTooltip 
             key={index} 

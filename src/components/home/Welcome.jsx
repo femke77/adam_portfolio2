@@ -1,10 +1,16 @@
 import { useEffect } from "react";
 import "./Welcome.css";
 import * as Scroll from "react-scroll";
+
+import { useAnimationContext } from "../../utils/AnimationContext";
+
+
 export default function Welcome() {
+  const { hasAnimated, disableAnimation } = useAnimationContext();
+
   const scroller = Scroll.scroller;
 
-  const goToPageAndScroll = (selector) => {
+  const scroll = (selector) => {
     scroller.scrollTo(selector, {
       duration: 1500,
       offset: -75,
@@ -14,12 +20,16 @@ export default function Welcome() {
 
   useEffect(() => {
     setTimeout(() => {
-      goToPageAndScroll("intro");
+      if (!hasAnimated) {
+        disableAnimation();
+      }
+      // Scroll into the intro section automatically after 4 seconds???
+      // scroll("intro");
     }, 4000);
-  }, []);
+  }, [hasAnimated, disableAnimation]);
 
   return (
-    <div className="animated-title">
+    <div className={hasAnimated ? "title" : "animated-title"}>
       <div className="text-top">
         <div>
           <span>Adam </span>
