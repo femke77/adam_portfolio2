@@ -16,6 +16,8 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Avatar from "react-avatar";
 import Socials from "./Socials";
 
+// TODO refactor this page to reduce repeated code
+
 const styles = {
   up: {
     position: "fixed",
@@ -62,7 +64,7 @@ export default function Nav() {
         <>
           {location !== "Contact" ? (
             <div>
-              <Button onClick={() => setOpenDrawer(true)}>
+              <Button sx={{paddingTop: "25px"}} onClick={() => setOpenDrawer(true)}>
                 <MenuIcon
                   size="large"
                   edge="start"
@@ -165,7 +167,7 @@ export default function Nav() {
             </div>
           ) : (
             <div>
-              <Button onClick={() => setOpenDrawer(true)}>
+              <Button sx={{paddingTop: "25px"}} onClick={() => setOpenDrawer(true)}>
                 <MenuIcon
                   size="large"
                   edge="start"
@@ -250,8 +252,8 @@ export default function Nav() {
           )}
         </>
       ) : (
+        
         // Desktop Nav //
-// TODO no animation on contact page? alter the code below so that slide-right is only on !== Contact
         <nav id="navigation" className="slide-right">
           <Avatar
             src="../../assets/projects/IMG_0698.jpg"
@@ -291,7 +293,7 @@ export default function Nav() {
                       to="projects"
                       spy={true}
        
-                      offset={-75}
+                    
                       duration={500}
                     >
                       Projects
