@@ -5,16 +5,16 @@ import Portfolio from "../components/home/Portfolio";
 import Skills from "../components/home/Skills";
 import Footer from "../components/Footer";
 import Welcome from "../components/home/Welcome";
-
+import Box from "@mui/material/Box";
 export default function Home() {
   return (
-    <Layout bgcolor={"black"}>
+    <Box bgcolor={"black"}>
       <Welcome />
       <Intro />
       <About />
       <Portfolio />
       <Skills />
       <Footer />
-    </Layout>
+    </Box>
   );
 }

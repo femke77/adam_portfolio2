@@ -49,7 +49,7 @@ export default function Contact() {
 
   }
   return (
-    <Layout bgStyles={bgStyles}>
+    <Box >
       <>
     <div style ={{
   //backgroundImage: `url(${tuktuk})`,
@@ -161,6 +161,6 @@ export default function Contact() {
   
     </div>
     </>
-    </Layout>
+    </Box>
   );
 }

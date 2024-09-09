@@ -3,10 +3,15 @@ import Nav from "./Nav"
 import Socials from "./Socials"
 import { useMediaQuery } from '@mui/material';
 import "./Layout.css"
-
-export default function Layout({bgcolor, bgStyles, children}) {
-    console.log(bgStyles);
+import "../../pages/Contact.css"
+import { useLocation } from "react-router-dom";
+export default function Layout({bgStyles, children}) {
     
+    const path = useLocation().pathname;
+    const location = path.split("/")[1];
+
+    
+
     const isMobile = useMediaQuery('(max-width:700px)');
     const styles = {
         socials: {
@@ -21,7 +26,7 @@ export default function Layout({bgcolor, bgStyles, children}) {
         
       }
     return (
-        <Grid container={true} spacing={3} style={bgStyles} >
+        <Grid container={true} spacing={3} className={location === "Contact" ? "contact" : ""} >
             <Grid item={true}  sx={{flexDirection: "column", alignItems:"center"}} xs={1.5} sm={1.5} md={1.5}  lg={1.5}>
                 <Nav />
             </Grid>
