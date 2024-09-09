@@ -2,9 +2,11 @@ import Grid from "@mui/material/Grid"
 import Nav from "./Nav"
 import Socials from "./Socials"
 import { useMediaQuery } from '@mui/material';
-import "./Layout.css"
+
+
 import "../../pages/Contact.css"
 import { useLocation } from "react-router-dom";
+
 export default function Layout({bgStyles, children}) {
     
     const path = useLocation().pathname;
