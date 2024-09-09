@@ -4,7 +4,8 @@ import Socials from "./Socials"
 import { useMediaQuery } from '@mui/material';
 import "./Layout.css"
 
-export default function Layout({children}) {
+export default function Layout({bgcolor, bgStyles, children}) {
+    console.log(bgStyles);
     
     const isMobile = useMediaQuery('(max-width:700px)');
     const styles = {
@@ -20,14 +21,14 @@ export default function Layout({children}) {
         
       }
     return (
-        <Grid container={true} spacing={3}>
-            <Grid item={true}  sx={{flexDirection: "column", alignItems:"center"}} xs={1} sm={1.5} md={1.5}  lg={1.5}>
+        <Grid container={true} spacing={3} style={bgStyles} >
+            <Grid item={true}  sx={{flexDirection: "column", alignItems:"center"}} xs={1.5} sm={1.5} md={1.5}  lg={1.5}>
                 <Nav />
             </Grid>
-            <Grid item={true} sx={{flexDirection: "column", alignItems: "center", padding: "20px"}} xs={9} sm={9} md={9} lg={9}>
+            <Grid item={true} sx={{ padding: "20px"}} xs={10.5} sm={10} md={9} lg={9}>
                 {children}
             </Grid>
-            <Grid  item={true} sx={{flexDirection: "column", alignItems: "center", }} xs={1} sm={1.5} md={1.5} lg={1.5}>
+            <Grid  item={true} sx={{flexDirection: "column", alignItems: "center", }} xs={0} sm={0.5} md={1.5} lg={1.5}>
                 {!isMobile ? (<Socials  styles={styles.socials}  placement={'right' } color={'secondary'} background={'transparent'} isMobile={isMobile} />) : ("")}
             
             </Grid>

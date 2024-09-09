@@ -8,7 +8,7 @@ import Welcome from "../components/home/Welcome";
 
 export default function Home() {
   return (
-    <Layout>
+    <Layout bgcolor={"black"}>
       <Welcome />
       <Intro />
       <About />

@@ -41,22 +41,32 @@ export default function Contact() {
     }, 3000);
   };
 
+  const bgStyles = {
+    backgroundImage: `url(${tuktuk})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    backgroundPosition: 'center',
+
+  }
   return (
-    <Layout>
+    <Layout bgStyles={bgStyles}>
+      <>
     <div style ={{
-        position: 'fixed',
-        backgroundImage: `url(${tuktuk})`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        paddingTop: 10,
+  //backgroundImage: `url(${tuktuk})`,
+     display: "flex",
+        flexDirection: "column",
+        justifyContent: "center", 
+        alignItems: "center", 
+       
+        paddingTop: "50px",
         paddingBottom: 10, 
-        backgroundPosition: 'center',
-        height: '100%',
+    
+        height: '100vh',
         width: '100%'
       }}
     >
-      <Container component="main" maxWidth="sm">
-        <CssBaseline />
+    
+
         <Box
           sx={{
             backgroundColor: "white",
@@ -67,6 +77,8 @@ export default function Contact() {
             alignItems: "center",
             borderRadius: 2,
             boxShadow: 10,
+            width: {xs: "100%", sm: "80%", md: "70%", lg: "60%"},
+            
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}></Avatar>
@@ -80,7 +92,7 @@ export default function Contact() {
             sx={{ mt: 3 }}
           >
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} sm={12}  md={6}>
                 <TextField
                   autoComplete="given-name"
                   name="yourName"
@@ -93,7 +105,7 @@ export default function Contact() {
                   autoFocus
                 />
               </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} sm={12} md={6}>
                 <TextField
                   fullWidth
                   id="company"
@@ -146,8 +158,9 @@ export default function Contact() {
           </Box>
           {userMessage && <Typography>{userMessage}</Typography>}
         </Box>
-      </Container>
+  
     </div>
+    </>
     </Layout>
   );
 }
