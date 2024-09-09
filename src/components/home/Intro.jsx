@@ -71,7 +71,7 @@ const Intro = () => {
         ref={textRef}
         className={`text-draw ${isVisible ? 'reveal' : 'hidden'}`}
       >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate incidunt praesentium, rerum voluptatem in reiciendis officia harum repudiandae tempore suscipit ex ea, adipisci ab porro.
+        Hey! I'm Adam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate incidunt praesentium, rerum voluptatem in reiciendis officia harum repudiandae tempore suscipit ex ea, adipisci ab porro.
       </p>
     </div>
   );
