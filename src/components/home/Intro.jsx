@@ -2,61 +2,76 @@ import React, { useEffect, useState, useRef } from 'react';
 
 
 const Intro = () => {
+  const [isVisible, setIsVisible] = useState(false);
   const textRef = useRef(null);
 
   useEffect(() => {
-    const textElement = textRef.current;
-
-    // Function to apply animation
-    const applyAnimation = () => {
-      if (textElement) {
-        let newDom = '';
-        const animationDelay = 50; // Adjust delay as needed
-
-        for (let i = 0; i < textElement.innerText.length; i++) {
-          newDom += `<span class="char">${textElement.innerText[i] === ' ' ? '&nbsp;' : textElement.innerText[i]}</span>`;
+    const handleScroll = () => {
+      if (textRef.current) {
+        const { top, bottom } = textRef.current.getBoundingClientRect();
+        const isInView = top < window.innerHeight && bottom >= 0;
+        if (isInView) {
+          setIsVisible(true);
+          // Stop observing once text is visible
+          observer.disconnect();
         }
-
-        textElement.innerHTML = newDom;
-        const length = textElement.children.length;
-
-        for (let i = 0; i < length; i++) {
-          textElement.children[i].style.animationDelay = `${animationDelay * i}ms`;
-        }
-
-        // Make text visible
-        textElement.style.opacity = '1';
       }
     };
 
-    // Intersection Observer
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            applyAnimation();
-            observer.unobserve(textElement);
-          }
-        });
-      },
-      { threshold: 0.1 } // Adjust threshold as needed
-    );
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
 
-    if (textElement) {
-      observer.observe(textElement);
+    if (textRef.current) {
+      observer.observe(textRef.current);
     }
 
+    // Adding scroll event listener as fallback
+    window.addEventListener('scroll', handleScroll);
+
     return () => {
-      if (textElement) {
-        observer.unobserve(textElement);
-      }
+      window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
     };
   }, []);
 
+  useEffect(() => {
+    if (isVisible && textRef.current) {
+      const textContent = textRef.current.innerText;
+      let newHtml = '';
+      const animationDelay = 15; // alter this to speed it up
+
+      textContent.split('').map((char, index) => {
+        newHtml += `<span class="char">${char === ' ' ? '&nbsp;' : char}</span>`;
+
+      })
+
+      textRef.current.innerHTML = newHtml;
+
+      const children = textRef.current.children;
+  
+      Array.from(children).map((child, index) => {
+        child.style.animationDelay = `${animationDelay * index}ms`;
+      });
+  
+      
+    }
+  }, [isVisible]);
+
   return (
     <div className="center">
-      <p ref={textRef}>
-        Hey, I'm Adam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate incidunt praesentium, rerum voluptatem in reiciendis officia harum repudiandae tempore suscipit ex ea, adipisci ab porro.
+      <p
+        ref={textRef}
+        className={`text-draw ${isVisible ? 'reveal' : 'hidden'}`}
+      >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate incidunt praesentium, rerum voluptatem in reiciendis officia harum repudiandae tempore suscipit ex ea, adipisci ab porro.
       </p>
     </div>
   );
