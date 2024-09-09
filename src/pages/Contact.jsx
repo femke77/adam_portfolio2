@@ -41,18 +41,12 @@ export default function Contact() {
     }, 3000);
   };
 
-  const bgStyles = {
-    backgroundImage: `url(${tuktuk})`,
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    backgroundPosition: 'center',
 
-  }
   return (
     <Box >
       <>
     <div style ={{
-  //backgroundImage: `url(${tuktuk})`,
+
      display: "flex",
         flexDirection: "column",
         justifyContent: "center", 

@@ -42,11 +42,12 @@ export default function Nav() {
   const navigate = useNavigate();
   const scroller = Scroll.scroller;
 
-  const goToPageAndScroll = (selector) => {
-    navigate("/");
-    scroller.scrollTo(selector, {
-      duration: 500,
-      smooth: true,
+  const goToPageAndScroll = async (selector) => {
+    
+    await navigate("/");
+    await scroller.scrollTo(selector, {
+      duration: 5,
+    
       offset: -75,
       spy: true,
     });
@@ -205,7 +206,7 @@ export default function Nav() {
                     {" "}
                     <Button
                       sx={{ color: "white" }}
-                      onClick={() => goToPageAndScroll("home")}
+                      onClick={() => goToPageAndScroll("intro") && setOpenDrawer(false)}
                     >
                       Home
                     </Button>
@@ -213,7 +214,7 @@ export default function Nav() {
                   <li>
                     <Button
                       sx={{ color: "white" }}
-                      onClick={() => goToPageAndScroll("about")}
+                      onClick={() => goToPageAndScroll("about") && setOpenDrawer(false)}
                     >
                       About
                     </Button>
@@ -221,7 +222,7 @@ export default function Nav() {
                   <li>
                     <Button
                       sx={{ color: "white" }}
-                      onClick={() => goToPageAndScroll("projects")}
+                      onClick={() => goToPageAndScroll("projects") && setOpenDrawer(false)} 
                     >
                       Projects
                     </Button>
@@ -289,7 +290,7 @@ export default function Nav() {
                     <ScrollLink
                       to="projects"
                       spy={true}
-                      smooth={true}
+       
                       offset={-75}
                       duration={500}
                     >
@@ -302,7 +303,7 @@ export default function Nav() {
                     <ScrollLink
                       to="about"
                       spy={true}
-                      smooth={true}
+         
                       offset={-75}
                       duration={500}
                     >
@@ -313,9 +314,9 @@ export default function Nav() {
                 <li>
                   <Button sx={{ color: "white" }}>
                     <ScrollLink
-                      to="home"
+                      to="intro"
                       spy={true}
-                      smooth={true}
+          
                       offset={-75}
                       duration={500}
                     >

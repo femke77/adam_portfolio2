@@ -6,9 +6,10 @@ import Skills from "../components/home/Skills";
 import Footer from "../components/Footer";
 import Welcome from "../components/home/Welcome";
 import Box from "@mui/material/Box";
+
 export default function Home() {
   return (
-    <Box bgcolor={"black"}>
+    <Box >
       <Welcome />
       <Intro />
       <About />
