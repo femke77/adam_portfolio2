@@ -26,10 +26,10 @@ const socialIcons = [
     },
   }));
 
-  export default function Socials({styles, placement, color, background, isMobile}) {
+  export default function Socials({styles, placement, color, background}) {
    
     return (
-      <Box className={isMobile === undefined ? "" : "slide-left"} style={styles} sx={{ marginLeft: "25px"}}>
+      <Box style={styles} sx={{ marginLeft: "25px"}}>
         {socialIcons.map(({ icon, label, href }, index) => (
           <StyledTooltip 
             key={index} 
