@@ -1,18 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "./Welcome.css";
 import * as Scroll from "react-scroll";
-import WelcomeNoAni from "./WelcomeNoAni";
+
 import { useAnimationContext } from "../../utils/AnimationContext";
 
-// TODO only animate first time user visits the site
 
 export default function Welcome() {
   const { hasAnimated, disableAnimation } = useAnimationContext();
-
-console.log(hasAnimated);
-
-
-
 
   const scroller = Scroll.scroller;
 
@@ -34,9 +28,8 @@ console.log(hasAnimated);
     }, 4000);
   }, [hasAnimated, disableAnimation]);
 
-
   return (
-    <div className={hasAnimated ? "title": "animated-title"}>
+    <div className={hasAnimated ? "title" : "animated-title"}>
       <div className="text-top">
         <div>
           <span>Adam </span>

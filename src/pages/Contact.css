@@ -1,5 +1,6 @@
 .contact {
-    background: url(../assets/images/tuktuk.jpg);
+    background-color: white;
+    background: url(./tuktuk.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center; 
